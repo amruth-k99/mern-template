@@ -35,8 +35,11 @@
   font-weight: 700;
   font-size: 1.75em;
   transition: 0.4s;
+  width: auto;
 }
-
+#navbar #logo:hover {
+  background-color: transparent;
+}
 #navbar a.active {
   background-color: dodgerblue;
   color: white;
@@ -47,14 +50,28 @@
   float: right;
 }
 
+/* FOR MOBILE*/
 @media screen and (max-width: 580px) {
+  .closed {
+    height: auto;
+    transition: all 1s;
+  }
+  .show {
+    display: none;
+  }
+  .full {
+    height: auto;
+    transition: all 1s;
+  }
   #navbar {
     padding: 20px 10px !important;
-    height: 100vh;
   }
   #navbar-toggle {
     padding: 20px 10px !important;
-    height: 14vh;
+    height: 100vh;
+  }
+  #navbar-right {
+    float: right;
   }
   #navbar a {
     float: none;
@@ -65,19 +82,14 @@
   #logo {
     display: block;
   }
-  #navbar-right {
-    float: none;
-  }
   #scrollToTop {
     display: none;
   }
-
   #toggle {
     color: black;
     float: right;
     margin-top: 15px;
   }
-
   #logo-container {
     display: block;
     align-items: center;
@@ -85,15 +97,13 @@
   }
 }
 
+/* FOR PC*/
 @media screen and (min-width: 580px) {
   #toggle {
     display: none;
   }
 }
 
-.hidden {
-  display: none;
-}
-.show {
-  display: block;
+#navbar-toggle {
+  float: right;
 }

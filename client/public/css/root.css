@@ -1,7 +1,0 @@
-#root {
-  background-color: white;
-}
-html {
-  scroll-behavior: smooth;
-  transition: sold 0.1s;
-}

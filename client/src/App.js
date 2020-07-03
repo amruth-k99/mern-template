@@ -5,6 +5,7 @@ import Todo from "./components/Todo";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SectionHeader from "./components/SectionHeader";
+import Card from "./components/Card";
 
 class App extends React.Component {
   constructor(props) {
@@ -56,10 +57,6 @@ class App extends React.Component {
   handleChange = (e) => {
     this.setState({ add: e.target.value });
   };
-  handleMenu = () => {
-    const wrapper = this.wrapperRef.current;
-    wrapper.classList.toggle("is-nav-open");
-  };
 
   render() {
     const { data, isLoading, add } = this.state;
@@ -81,6 +78,7 @@ class App extends React.Component {
                 className="input"
               />
               <input type="submit" required value="Submit" />
+              <div id="projects"></div>
             </form>
             {isLoading ? (
               <div>Loading...</div>
@@ -98,6 +96,67 @@ class App extends React.Component {
                 ))}
               </ul>
             )}
+          </div>
+        </section>
+        <section className="body-container container">
+          <hr className="m-2" />
+          <div className="heading">Projects</div>
+          <div className="row">
+            <div className="col-sm-3">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-sm-3">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-sm-3">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-sm-3">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-sm-3">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
           </div>
         </section>
         <Footer />

@@ -10,6 +10,8 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
       rel="stylesheet"
@@ -20,11 +22,7 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link
-      href="./css/root.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="./css/root.css" rel="stylesheet" type="text/css" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -41,6 +39,7 @@
     -->
     <title>Mern Stack</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
@@ -56,3 +55,20 @@
     -->
   </body>
 </html>
+
+<script>
+  // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 2 || document.documentElement.scrollTop > 2) {
+      document.getElementById("navbar").style.padding = "17px 10px";
+      document.getElementById("logo").style.fontSize = "1.5em";
+    } else {
+      document.getElementById("navbar").style.padding = "25px 10px";
+      document.getElementById("logo").style.fontSize = "1.75em";
+    }
+  }
+</script>

@@ -2,11 +2,15 @@ import React from "react";
 import logo from "./logo.svg";
 import "./css/App.css";
 import Todo from "./components/Todo";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import SectionHeader from "./components/SectionHeader";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], isLoading: true, add: "" };
+    this.wrapperRef = React.createRef();
+    this.state = { data: [], isLoading: true, add: "", openNav: true };
   }
   componentDidMount() {
     //method is called after the component is rendered
@@ -35,7 +39,7 @@ class App extends React.Component {
       .then((res) => "done");
     this.getTodos();
   };
-  addTodo = () => {
+  addTodo = (e) => {
     if (this.state.add.length) {
       const data = {
         action: this.state.add,
@@ -52,28 +56,32 @@ class App extends React.Component {
   handleChange = (e) => {
     this.setState({ add: e.target.value });
   };
+  handleMenu = () => {
+    const wrapper = this.wrapperRef.current;
+    wrapper.classList.toggle("is-nav-open");
+  };
+
   render() {
     const { data, isLoading, add } = this.state;
     return (
-      <div className="App">
-        <div className="container" style={{ color: "red" }}>
-          <header className="App-header">
+      <div className="App" id="top">
+        <NavBar />
+        <SectionHeader />
+        <section className="App-header">
+          <div className="container">
             <img src={logo} className="App-logo" alt="logo" />
             Hello Amruth!
-            <input
-              type="string"
-              name="activity"
-              value={add}
-              onChange={this.handleChange}
-              placeholder="Enter the task"
-              className="input"
-            />
-            <input
-              type="submit"
-              required
-              value="Submit"
-              onClick={this.addTodo}
-            />
+            <form onClick={this.addTodo}>
+              <input
+                type="string"
+                name="activity"
+                value={add}
+                onChange={this.handleChange}
+                placeholder="Enter the task"
+                className="input"
+              />
+              <input type="submit" required value="Submit" />
+            </form>
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -90,8 +98,12 @@ class App extends React.Component {
                 ))}
               </ul>
             )}
-          </header>
-        </div>
+          </div>
+        </section>
+        <Footer />
+        <a href="#top" id="scrollToTop">
+          <ion-icon name="arrow-up-outline" id="arrow"></ion-icon>
+        </a>
       </div>
     );
   }

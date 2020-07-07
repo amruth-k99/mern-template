@@ -25,30 +25,30 @@ class NavBar extends Component {
             className={!toggle ? "hidden" : "show"}
           >
             <a
-              className={active === 0 ? "active" : ""}
+              className={active === 0 ? " active" : ""}
               href="#root"
-              onClick={() => this.setState({ active: 0 })}
+              onClick={() => this.setState({ active: 0, toggle: !toggle })}
             >
               Home
             </a>
             <a
               className={active === 1 ? "active" : ""}
               href="#projects"
-              onClick={() => this.setState({ active: 1 })}
+              onClick={() => this.setState({ active: 1, toggle: !toggle })}
             >
               Projects
             </a>
             <a
               className={active === 2 ? "active" : ""}
-              href="#about"
-              onClick={() => this.setState({ active: 2 })}
+              href="#aboutme"
+              onClick={() => this.setState({ active: 2, toggle: !toggle })}
             >
               About
             </a>
             <a
               className={active === 3 ? "active" : ""}
-              href="#contact"
-              onClick={() => this.setState({ active: 3 })}
+              href="#footer"
+              onClick={() => this.setState({ active: 3, toggle: !toggle })}
             >
               Contact
             </a>

@@ -27,6 +27,7 @@
   background-color: #ddd;
   color: black;
   font-weight: 700;
+  transform: scale(1.04);
 }
 #navbar #logo {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -41,7 +42,7 @@
   background-color: transparent;
 }
 #navbar a.active {
-  background-color: dodgerblue;
+  background-color: #1abc9c;
   color: white;
   font-weight: 700;
 }
@@ -49,9 +50,28 @@
 #navbar-right {
   float: right;
 }
-
+#projects {
+  height: 1;
+}
 /* FOR MOBILE*/
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 780px) {
+  .intro-text {
+    font-size: 1.5em;
+    font-family: "Kaushan Script", cursive;
+  }
+  .about-me-text {
+    font-size: 1.2em;
+  }
+  .App-logo {
+    width: 50%;
+    height: 50%;
+  }
+
+  .about-name {
+    font-family: "Kaushan Script", cursive;
+    font-size: 1.7em;
+  }
+
   .closed {
     height: auto;
     transition: all 1s;
@@ -72,6 +92,7 @@
   }
   #navbar-right {
     float: right;
+    transition: all 0.2s ease-in-out 0s;
   }
   #navbar a {
     float: none;
@@ -93,14 +114,23 @@
   #logo-container {
     display: block;
     align-items: center;
+    padding-left: 0px;
     transition: all 0.3s linear;
+  }
+  #projects {
+    height: 2;
+    color: white;
   }
 }
 
 /* FOR PC*/
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 780px) {
   #toggle {
     display: none;
+  }
+  #projects {
+    height: 2;
+    color: white;
   }
 }
 

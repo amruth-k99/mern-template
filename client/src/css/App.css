@@ -5,6 +5,9 @@ html {
   scroll-behavior: smooth;
   transition: sold 0.1s;
 }
+.img {
+  margin: auto;
+}
 
 .App {
   text-align: center;
@@ -12,17 +15,11 @@ html {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  margin-top: -18vh;
-  background-color: "transparent";
-  display: flex;
-  font-size: calc(10px + 2vmin);
-  color: black;
+.todo {
+  margin-top: -10vh;
+  width: 30%;
+  margin: auto;
+  height: 30%;
 }
 .body-container {
   margin-bottom: 3vh;
@@ -81,11 +78,12 @@ ul {
   cursor: pointer;
   padding: 10px;
 }
-.sectionHeader {
-  height: 50vh;
-  background-color: #1abc9c !important;
-}
 
+/* Card CSS */
+.card {
+  border-radius: 0rem;
+  height: 350px;
+}
 /* For card transformation */
 .card-feature {
   /* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
@@ -102,11 +100,113 @@ ul {
 .card-link :hover {
   cursor: pointer;
 }
+.card-text {
+  height: 100px;
+  overflow: auto;
+  text-align: justify;
+}
+
+/* END Card CSS  */
+
+/* Section Header CSS  */
+
+.sectionHeader {
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  z-index: 0;
+  background-color: #000000 !important;
+}
+.top-layer {
+  z-index: 10;
+  height: 100vh;
+  margin: auto;
+}
+.App-header {
+  z-index: 2;
+  background-color: "transparent";
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+/* END Section Header CSS  */
+
 .heading {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
-  font-size: 2em;
-  margin: 20px auto;
+  font-size: 2.5em;
+  margin: 40px auto;
+}
+.intro-text {
+  font-size: 3em;
+  font-family: "Kaushan Script", cursive;
+  font-size: 2.4em;
+}
+
+.about-name {
+  font-size: 3em;
+  font-family: "Kaushan Script", cursive;
+  font-size: 2.4em;
+  text-align: center !important;
+}
+
+.about-me-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #2c3e50;
+}
+.about-me-text {
+  font-size: 1.5em;
+  margin: auto;
+  text-align: justify;
+}
+
+p {
+  margin-bottom: 2px;
+}
+#showMore {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+  padding: 10px;
+  margin: auto;
+  max-width: 200px;
+  transition: 0.2s;
+  font-size: 18px;
+  border: 2px solid black !important;
+  transition: all 0.2s ease-in-out 0s;
+}
+#showMore:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+#showMore:hover::after {
+  transition: 0.3s;
+}
+
+#show {
+  display: flex;
+  transition: all 2s linear;
+}
+#show-less {
+  display: none;
+}
+#show {
+  transition: opacity 2s linear;
+  transform: translate(0);
+  opacity: 1;
+}
+#show-less {
+  transform: translate(9999px);
+  opacity: 0;
+}
+
+/* FOR MOBILE*/
+@media screen and (max-width: 780px) {
 }

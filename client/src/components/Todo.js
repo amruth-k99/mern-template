@@ -9,11 +9,11 @@ class Todo extends Component {
     const { action, id } = this.props;
     return (
       <div className="text-red">
-        {this.props.get("This is from Child Comp--"+id)}
+        {this.props.get("This is from Child Comp--" + id)}
         {action}...{" "}
-        <a href="#region" onClick={() => this.props.delete(id)}>
+        <button href="#region" onClick={() => this.props.delete(id)}>
           Done
-        </a>
+        </button>
       </div>
     );
   }

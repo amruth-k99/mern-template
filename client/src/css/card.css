@@ -1,0 +1,28 @@
+/* Card CSS */
+.card {
+  border-radius: 0rem;
+  height: 350px;
+}
+/* For card transformation */
+.card-feature {
+  /* transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]; */
+  transition: all 0.2s ease-in-out 0s;
+  margin-bottom: 10px !important;
+  background-color: #fafbfc;
+}
+.card-feature:hover {
+  /* background-color: transparent; */
+  box-shadow: 0px 4px 20px rgb(24, 41, 66, 0.2);
+  /* to increse size of the box on hover*/
+  transform: scale(1.025);
+}
+.card-link :hover {
+  cursor: pointer;
+}
+.card-text {
+  height: 100px;
+  overflow: auto;
+  text-align: justify;
+}
+
+/* END Card CSS  */

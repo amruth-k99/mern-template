@@ -1,10 +1,11 @@
 import React from "react";
 import Github from "../assets/images/github.svg";
 import Open from "../assets/images/open.png";
-/* CSS in App.js as 'Card CSS' */
+import "../css/card.css";
+/* CSS in card.js as 'Card CSS' */
 const Card = ({ title, type, content, techStack, github, openLink }) => {
   return (
-    <div className="card card-body card-feature noselect mb-5">
+    <div className="card card-body card-feature noselect mb-5 justify-content-between">
       <div style={{ overflow: "hidden" }}>
         <h5 className="card-title">{title}</h5>
         <h6 className="card-subtitle mb-2 text-muted">{type}</h6>

@@ -47,7 +47,7 @@ class NavBar extends Component {
             </a>
             <a
               className={active === 3 ? "active" : ""}
-              href="#footer"
+              href="#contact"
               onClick={() => this.setState({ active: 3, toggle: !toggle })}
             >
               Contact

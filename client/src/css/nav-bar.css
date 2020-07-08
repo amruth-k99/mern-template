@@ -42,7 +42,7 @@
   background-color: transparent;
 }
 #navbar a.active {
-  background-color: #1abc9c;
+  background-color: #febf00;
   color: white;
   font-weight: 700;
 }
@@ -57,13 +57,14 @@
 @media screen and (max-width: 780px) {
   .intro-text {
     font-size: 1.5em;
-    font-family: "Kaushan Script", cursive;
+    font-family: "Source Code Pro", monospace;
+    text-align: start;
   }
   .about-me-text {
     font-size: 1.2em;
   }
   .App-logo {
-    width: 50%;
+    width: 70%;
     height: 50%;
   }
 

@@ -7,15 +7,27 @@ class NavBar extends Component {
   }
   render() {
     const { active, toggle } = this.state;
+
     return (
       <div id="navbar">
         <div className="container" id="logo-container">
           <div>
-            <ion-icon
-              name={toggle ? "menu" : "close"}
-              id="toggle"
-              onClick={() => this.setState({ toggle: !toggle })}
-            ></ion-icon>
+            {toggle ? (
+              <ion-icon
+                className="iconToggle"
+                name="menu"
+                id="toggle"
+                onClick={() => this.setState({ toggle: !toggle })}
+              ></ion-icon>
+            ) : (
+              <ion-icon
+                className="iconToggle"
+                name="close"
+                id="toggle"
+                onClick={() => this.setState({ toggle: !toggle })}
+              ></ion-icon>
+            )}
+
             <a href="#root" id="logo">
               TheRealScripts
             </a>
@@ -44,6 +56,13 @@ class NavBar extends Component {
               onClick={() => this.setState({ active: 2, toggle: !toggle })}
             >
               About
+            </a>
+            <a
+              className={active === 4 ? "active" : ""}
+              href="#blog"
+              onClick={() => this.setState({ active: 4, toggle: !toggle })}
+            >
+              Blog
             </a>
             <a
               className={active === 3 ? "active" : ""}

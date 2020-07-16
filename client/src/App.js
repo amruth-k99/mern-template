@@ -8,7 +8,7 @@ import SectionHeader from "./components/SectionHeader";
 import Card from "./components/Card";
 import Button from "./components/Button";
 import ToDoComp from "./components/ToDoComp";
-import profile from "./assets/images/profile.png";
+import profile from "./assets/images/wall-e.png";
 import Contact from "./components/Contact";
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class App extends React.Component {
       data: [],
       isLoading: true,
       openNav: true,
+      badge: "",
       projects: [],
       showMore: false,
       isLoaded: true,
@@ -48,7 +49,8 @@ class App extends React.Component {
     this.setState({ add: e.target.value });
   };
   render() {
-    const { data, isLoading, add, showMore } = this.state;
+    const { data, isLoading, add, showMore, badge } = this.state;
+
     return (
       <div className="App" id="top">
         <NavBar />
@@ -56,7 +58,6 @@ class App extends React.Component {
 
         <div id="aboutme"></div>
         {/* <ToDoComp /> */}
-        <div className="heading">About Me</div>
         <section className="about-me-container">
           <div className="container">
             <div className="row text-white">
@@ -82,12 +83,122 @@ class App extends React.Component {
                     ability to ease our work and providing a better service
                     always amazes me!
                   </p>
+                  <p>You can find my resume here..!</p>
+                  <div id="tryhackme"></div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <section className="body-container container">
+          <hr className="m-2" style={{ color: "white" }} />
+          <div id="projects"></div>
+          <div className="heading">Projects</div>
+          <div className="row mb-4">
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="Student Portal"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  The college website clone built with django framework and PostgreSQL Database."
+                openLink="https://www.google.com"
+                techStack="Django, PostgreSQL,HTML/CSS "
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+          </div>
+          <div id={showMore ? "show" : "show-less"} className="row mb-4">
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+            <div className="col-md-6 col-lg-4">
+              <Card
+                title="College Website"
+                type="Prototype"
+                content="  A college website to view student's performance, attendance and
+                activities in and around the campus."
+                openLink="https://www.google.com"
+                techStack="ReactJs, NodeJs, MongoDB, Express"
+                github="https://github.com/amruth-k99/clg_website_project"
+              />
+            </div>
+          </div>
+
+          <a
+            className="border-black border"
+            id="showMore"
+            onClick={() => this.setState({ showMore: !showMore })}
+          >
+            {showMore ? "Show Less" : "Show More"}
+          </a>
+        </section>
+
+        <div id="contact"></div>
+        <Contact />
+        <hr className="m-3" />
         <div className="footer text-center text-white">
           <div className="container">
             <div className="row">
@@ -126,122 +237,13 @@ class App extends React.Component {
                 </a>
               </div>
               <div className="col-lg-4">
-                <h4 className="text-uppercase mb-4 h3">About Me</h4>
-                <p className="lead mb-0">
-                  "Passionate Web Developer, Cyber Security Enthusiast, Cloud
-                  Enthusiast willing to run a start-up"
-                </p>
+                <h4 className="text-uppercase mb-4 h3">Mail</h4>
+                <p className="lead mb-0">amruthk99@gmail.com</p>
+                <p className="lead mb-0">amruthk17e@iiitt.ac.in</p>
               </div>
             </div>
           </div>
         </div>
-        <section className="body-container container">
-          <hr className="m-2" />
-          <div id="projects"></div>
-          <div className="heading">Projects</div>
-          <div className="row mb-3">
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="Student Portal"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  The college website clone built with django framework and PostgreSQL Database."
-                openLink="https://www.google.com"
-                techStack="Django, PostgreSQL,HTML/CSS "
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-          </div>
-          <div id={showMore ? "show" : "show-less"} className="row mb-3">
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <Card
-                title="College Website"
-                type="Prototype"
-                content="  A college website to view student's performance, attendance and
-                activities in and around the campus."
-                openLink="https://www.google.com"
-                techStack="ReactJs, NodeJs, MongoDB, Express"
-                github="https://github.com/amruth-k99/clg_website_project"
-              />
-            </div>
-          </div>
-
-          <a
-            className="border-black border"
-            id="showMore"
-            onClick={() => this.setState({ showMore: !showMore })}
-          >
-            {showMore ? "Show Less" : "Show More"}
-          </a>
-        </section>
-
-        <div id="contact"></div>
-        <Contact />
         <Footer />
         <a href="#top" id="scrollToTop">
           <ion-icon name="arrow-up-outline" id="arrow"></ion-icon>

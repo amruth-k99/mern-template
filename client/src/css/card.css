@@ -1,7 +1,7 @@
 /* Card CSS */
 .card {
   border-radius: 0rem;
-  height: 350px;
+  text-align: left;
 }
 /* For card transformation */
 .card-feature {

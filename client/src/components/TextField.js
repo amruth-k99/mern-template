@@ -33,6 +33,7 @@ export default class Input extends React.Component {
 
     return (
       <div className={fieldClassName}>
+        {console.log(fieldClassName)}
         {active && value && predicted && predicted.includes(value) && (
           <p className="predicted">{predicted}</p>
         )}

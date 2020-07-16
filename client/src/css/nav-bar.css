@@ -1,6 +1,6 @@
 #navbar {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #f4f6ff;
   padding: 30px 10px;
   transition: 0.3s;
   position: fixed;
@@ -24,7 +24,7 @@
 }
 
 #navbar a:hover {
-  background-color: #ddd;
+  background-color: #e3e9ff;
   color: black;
   font-weight: 700;
   transform: scale(1.04);
@@ -42,7 +42,7 @@
   background-color: transparent;
 }
 #navbar a.active {
-  background-color: #febf00;
+  background-color: #10375c;
   color: white;
   font-weight: 700;
 }
@@ -55,6 +55,10 @@
 }
 /* FOR MOBILE*/
 @media screen and (max-width: 780px) {
+  .trans {
+    transform: translateX(-10px);
+    transition: 0.1s all ease-in-out;
+  }
   .intro-text {
     font-size: 1.5em;
     font-family: "Source Code Pro", monospace;

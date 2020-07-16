@@ -31,7 +31,7 @@ export default class Contact extends React.Component {
         style={{
           paddingTop: "20px",
           paddingBottom: "20px",
-          backgroundColor: "orange",
+          backgroundColor: "#10375c",
         }}
       >
         <div className="heading text-white">Contact Me</div>

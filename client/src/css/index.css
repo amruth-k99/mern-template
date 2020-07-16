@@ -25,16 +25,16 @@ code {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(255, 255, 255);
+  background: #f4f6ff;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: white;
+  background: #f4f6ff;
 }
 ::selection {
-  background: #D1FF4B; /* WebKit/Blink Browsers */
+  background: #d1ff4b; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: #D1FF4B; /* Gecko Browsers */
+  background: #d1ff4b; /* Gecko Browsers */
 }

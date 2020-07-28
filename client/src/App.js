@@ -25,12 +25,15 @@ class App extends React.Component {
       show_ip: [],
     };
   }
+  componentWillMount() {}
   componentDidMount() {
+    let time = new Date().toISOString();
+    console.log(time);
     //method is called after the component is rendered
     fetch("http://www.geoplugin.net/json.gp")
       .then((res) => res.json())
       .then((res) => {
-        this.setState({ show_ip: res.geoplugin_request });
+        this.setState({ show_ip: res.geoplugin_request, time: time });
       });
   }
 
@@ -83,7 +86,18 @@ class App extends React.Component {
                     ability to ease our work and providing a better service
                     always amazes me!
                   </p>
-                  <p>You can find my resume here..!</p>
+                  <p>
+                    You can find my resume{" "}
+                    <a
+                      className="text-uppercase font-weight-bold"
+                      href="https://s3.ap-south-1.amazonaws.com/therealscripts.com/Amruth+Kuntamalla(July+2020).pdf"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      here
+                    </a>
+                    ..!
+                  </p>
                   <div id="tryhackme"></div>
                 </div>
               </div>
